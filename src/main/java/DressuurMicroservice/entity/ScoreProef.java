@@ -213,4 +213,12 @@ public class ScoreProef {
 
     @NotNull
     private int eindtotaal;
+
+    public int getOneHP(){
+        return oneHP;
+    }
+
+    public void setOneHP(int value){
+        oneHP = value;
+    }
 }

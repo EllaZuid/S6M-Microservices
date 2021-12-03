@@ -5,5 +5,5 @@ WORKDIR /usr/src/app
 COPY . /usr/src/app
 RUN mvn package -Dmaven.test.skip=true
 
-EXPOSE 8081
+EXPOSE 9002
 CMD [ "sh", "-c", "mvn spring-boot:run" ]

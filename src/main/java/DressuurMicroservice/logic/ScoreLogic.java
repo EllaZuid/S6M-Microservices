@@ -19,7 +19,12 @@ public class ScoreLogic {
         if(proef == null){
             return false;
         }
-        proefRepo.save(proef);
+
+        ScoreProef test = proefRepo.save(proef);
+
+        if(test == null){
+            return false;
+        }
         return true;
     }
 }

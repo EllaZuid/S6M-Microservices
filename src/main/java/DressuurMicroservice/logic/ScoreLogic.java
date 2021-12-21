@@ -16,13 +16,9 @@ public class ScoreLogic {
 
 
     public boolean addProefScore(ScoreProef proef) {
-        if(proef == null){
-            return false;
-        }
-
         ScoreProef test = proefRepo.save(proef);
 
-        if(test == null){
+        if(test.getOneHP() == 0){
             return false;
         }
         return true;

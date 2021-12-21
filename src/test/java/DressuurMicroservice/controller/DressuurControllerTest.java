@@ -37,6 +37,19 @@ class DressuurControllerTest {
 
     }
 
+    @Test
+    void addEmptyProefScore() {
+        ScoreProef proef = createEmptyProef();
+        ResponseEntity returnResponseEntity;
+        ResponseEntity expectedResponseEntity = new ResponseEntity(HttpStatus.BAD_REQUEST);
+
+        when(proefRepoMock.save(proef)).thenReturn(proef);
+        returnResponseEntity = dressuurController.addProefScore(proef);
+
+        Assertions.assertEquals(expectedResponseEntity.getStatusCode(), returnResponseEntity.getStatusCode());
+
+    }
+
     private ScoreProef createProef()
     {
         ScoreProef proef =  new ScoreProef();
@@ -76,6 +89,11 @@ class DressuurControllerTest {
         proef.setSubtotaalCorr(0);
         proef.setStrafpunten(0);
         proef.setEindtotaal(155);
+        return proef;
+    }
+
+    private ScoreProef createEmptyProef(){
+        ScoreProef proef = new ScoreProef();
         return proef;
     }
 }

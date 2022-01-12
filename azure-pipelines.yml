@@ -1,14 +1,13 @@
 trigger:
-- '*'
+- main
 
 pool:
   vmImage: ubuntu-latest
-variables:
-  buildConfiguration: 'Release'
+
 stages:
 - stage: 'Test'
   jobs:
-  - job: 'IntregrationTest'
+  - job: 'Staging'
     steps:
     - task: Maven@3
       inputs:
@@ -25,20 +24,20 @@ stages:
     pool:
       vmImage: 'ubuntu-20.04'
     variables:
-    - group: Release
+    - group: Testing
     steps:
     - script: |
         wget -c ftp.ps.pl/pub/apache/jmeter/binaries/apache-jmeter-$(jmeterVersion).tgz
         tar -xzf apache-jmeter-$(jmeterVersion).tgz
       displayName: 'Install Apache JMeter'
-    - script: apache-jmeter-$(jmeterVersion)/bin/./jmeter -n -t LoadTest.jmx -o Results.xml -Jhostname=$(STAGING_HOSTNAME)
+    - script: apache-jmeter-$(jmeterVersion)/bin/./jmeter -n -t LoadTest.jmx -o Results.xml
       displayName: 'Run Load tests'
-    - script: |
-        sudo apt-get update
-        sudo apt-get install xsltproc
-        xsltproc JMeter2JUnit.xsl Results.xml > JUnit.xml
-      displayName: 'Transform JMeter output to JUnit'
+#     - script: |
+#         sudo apt-get update
+#         sudo apt-get install xsltproc
+#         xsltproc JMeter2JUnit.xsl Results.xml > JUnit.xml
+#       displayName: 'Transform JMeter output to JUnit'
     - task: PublishTestResults@2
       inputs:
-        testResultsFormat: JUnit
-        testResultsFiles: JUnit.xml
+        testResultsFormat: Jmeter
+        testResultsFiles: Results.xml

@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.4.3">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="LoadTest" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">10</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">100</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">10</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${_P(hostname)}</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path"></stringProp>
+          <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </ConfigTestElement>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+	&quot;eightCorr&quot;: &quot;&quot;,&#xd;
+	&quot;eightHP&quot;: &quot;5&quot;,&#xd;
+	&quot;eightHalfP&quot;: &quot;&quot;,&#xd;
+	&quot;eightNotes&quot;: &quot;&quot;,&#xd;
+	&quot;eighteenCorr&quot;: &quot;&quot;,&#xd;
+	&quot;eighteenHP&quot;: &quot;5&quot;,&#xd;
+	&quot;eighteenHalfP&quot;: &quot;&quot;,&#xd;
+	&quot;eighteenNotes&quot;: &quot;&quot;,&#xd;
+	&quot;eindtotaal&quot;: &quot;150&quot;,&#xd;
+	&quot;elevenCorr&quot;: &quot;&quot;,&#xd;
+	&quot;elevenHP&quot;: &quot;5&quot;,&#xd;
+	&quot;elevenHalfP&quot;: &quot;&quot;,&#xd;
+	&quot;elevenNotes&quot;: &quot;&quot;,&#xd;
+	&quot;fifteenCorr&quot;: &quot;&quot;,&#xd;
+	&quot;fifteenHP&quot;: &quot;5&quot;,&#xd;
+	&quot;fifteenHalfP&quot;: &quot;&quot;,&#xd;
+	&quot;fifteenNotes&quot;: &quot;&quot;,&#xd;
+	&quot;fiveCorr&quot;: &quot;&quot;,&#xd;
+	&quot;fiveHP&quot;: &quot;5&quot;,&#xd;
+	&quot;fiveHalfP&quot;: &quot;&quot;,&#xd;
+	&quot;fiveNotes&quot;: &quot;&quot;,&#xd;
+	&quot;fourCorr&quot;: &quot;&quot;,&#xd;
+	&quot;fourHP&quot;: &quot;5&quot;,&#xd;
+	&quot;fourHalfP&quot;: &quot;&quot;,&#xd;
+	&quot;fourNotes&quot;: &quot;&quot;,&#xd;
+	&quot;fourteenCorr&quot;: &quot;&quot;,&#xd;
+	&quot;fourteenHP&quot;: &quot;5&quot;,&#xd;
+	&quot;fourteenHalfP&quot;: &quot;&quot;,&#xd;
+	&quot;fourteenNotes&quot;: &quot;&quot;,&#xd;
+	&quot;nineCorr&quot;: &quot;&quot;,&#xd;
+	&quot;nineHP&quot;: &quot;5&quot;,&#xd;
+	&quot;nineHalfP&quot;: &quot;&quot;,&#xd;
+	&quot;nineNotes&quot;: &quot;&quot;,&#xd;
+	&quot;nineteenCorr&quot;: &quot;&quot;,&#xd;
+	&quot;nineteenHP&quot;: &quot;5&quot;,&#xd;
+	&quot;nineteenHalfP&quot;: &quot;&quot;,&#xd;
+	&quot;nineteenNotes&quot;: &quot;&quot;,&#xd;
+	&quot;oneCorr&quot;: &quot;&quot;,&#xd;
+	&quot;oneHP&quot;: &quot;5&quot;,&#xd;
+	&quot;oneHalfP&quot;: &quot;&quot;,&#xd;
+	&quot;oneNotes&quot;: &quot;&quot;,&#xd;
+	&quot;sevenCorr&quot;: &quot;&quot;,&#xd;
+	&quot;sevenHP&quot;: &quot;5&quot;,&#xd;
+	&quot;sevenHalfP&quot;: &quot;&quot;,&#xd;
+	&quot;sevenNotes&quot;: &quot;&quot;,&#xd;
+	&quot;seventeenCorr&quot;: &quot;&quot;,&#xd;
+	&quot;seventeenHP&quot;: &quot;5&quot;,&#xd;
+	&quot;seventeenHalfP&quot;: &quot;&quot;,&#xd;
+	&quot;seventeenNotes&quot;: &quot;&quot;,&#xd;
+	&quot;sixCorr&quot;: &quot;&quot;,&#xd;
+	&quot;sixHP&quot;: &quot;5&quot;,&#xd;
+	&quot;sixHalfP&quot;: &quot;&quot;,&#xd;
+	&quot;sixNotes&quot;: &quot;&quot;,&#xd;
+	&quot;sixteenCorr&quot;: &quot;&quot;,&#xd;
+	&quot;sixteenHP&quot;: &quot;5&quot;,&#xd;
+	&quot;sixteenHalfP&quot;: &quot;&quot;,&#xd;
+	&quot;sixteenNotes&quot;: &quot;&quot;,&#xd;
+	&quot;strafpunten&quot;: &quot;1&quot;,&#xd;
+	&quot;subtotaalCorr&quot;: &quot;&quot;,&#xd;
+	&quot;subtotaalHalvePunten&quot;: &quot;&quot;,&#xd;
+	&quot;subtotaalHelePunten&quot;: &quot;150&quot;,&#xd;
+	&quot;tenCorr&quot;: &quot;&quot;,&#xd;
+	&quot;tenHP&quot;: &quot;5&quot;,&#xd;
+	&quot;tenHalfP&quot;: &quot;&quot;,&#xd;
+	&quot;tenNotes&quot;: &quot;&quot;,&#xd;
+	&quot;thirteenCorr&quot;: &quot;&quot;,&#xd;
+	&quot;thirteenHP&quot;: &quot;5&quot;,&#xd;
+	&quot;thirteenHalfP&quot;: &quot;&quot;,&#xd;
+	&quot;thirteenNotes&quot;: &quot;&quot;,&#xd;
+	&quot;thirtyCorr&quot;: &quot;&quot;,&#xd;
+	&quot;thirtyHP&quot;: &quot;5&quot;,&#xd;
+	&quot;thirtyHalfP&quot;: &quot;&quot;,&#xd;
+	&quot;thirtyNotes&quot;: &quot;&quot;,&#xd;
+	&quot;threeCorr&quot;: &quot;&quot;,&#xd;
+	&quot;threeHP&quot;: &quot;5&quot;,&#xd;
+	&quot;threeHalfP&quot;: &quot;&quot;,&#xd;
+	&quot;threeNotes&quot;: &quot;&quot;,&#xd;
+	&quot;twelveCorr&quot;: &quot;&quot;,&#xd;
+	&quot;twelveHP&quot;: &quot;5&quot;,&#xd;
+	&quot;twelveHalfP&quot;: &quot;&quot;,&#xd;
+	&quot;twelveNotes&quot;: &quot;&quot;,&#xd;
+	&quot;twentyCorr&quot;: &quot;&quot;,&#xd;
+	&quot;twentyHP&quot;: &quot;5&quot;,&#xd;
+	&quot;twentyHalfP&quot;: &quot;&quot;,&#xd;
+	&quot;twentyNotes&quot;: &quot;&quot;,&#xd;
+	&quot;twentyeightCorr&quot;: &quot;&quot;,&#xd;
+	&quot;twentyeightHP&quot;: &quot;5&quot;,&#xd;
+	&quot;twentyeightHalfP&quot;: &quot;&quot;,&#xd;
+	&quot;twentyeightNotes&quot;: &quot;&quot;,&#xd;
+	&quot;twentyfiveCorr&quot;: &quot;&quot;,&#xd;
+	&quot;twentyfiveHP&quot;: &quot;5&quot;,&#xd;
+	&quot;twentyfiveHalfP&quot;: &quot;&quot;,&#xd;
+	&quot;twentyfiveNotes&quot;: &quot;&quot;,&#xd;
+	&quot;twentyfourCorr&quot;: &quot;&quot;,&#xd;
+	&quot;twentyfourHP&quot;: &quot;5&quot;,&#xd;
+	&quot;twentyfourHalfP&quot;: &quot;&quot;,&#xd;
+	&quot;twentyfourNotes&quot;: &quot;&quot;,&#xd;
+	&quot;twentynineCorr&quot;: &quot;&quot;,&#xd;
+	&quot;twentynineHP&quot;: &quot;5&quot;,&#xd;
+	&quot;twentynineHalfP&quot;: &quot;&quot;,&#xd;
+	&quot;twentynineNotes&quot;: &quot;&quot;,&#xd;
+	&quot;twentyoneCorr&quot;: &quot;&quot;,&#xd;
+	&quot;twentyoneHP&quot;: &quot;5&quot;,&#xd;
+	&quot;twentyoneHalfP&quot;: &quot;&quot;,&#xd;
+	&quot;twentyoneNotes&quot;: &quot;&quot;,&#xd;
+	&quot;twentyonehalfCorr&quot;: &quot;&quot;,&#xd;
+	&quot;twentyonehalfHP&quot;: &quot;5&quot;,&#xd;
+	&quot;twentyonehalfHalfP&quot;: &quot;&quot;,&#xd;
+	&quot;twentyonehalfNotes&quot;: &quot;&quot;,&#xd;
+	&quot;twentysevenCorr&quot;: &quot;&quot;,&#xd;
+	&quot;twentysevenHP&quot;: &quot;5&quot;,&#xd;
+	&quot;twentysevenHalfP&quot;: &quot;&quot;,&#xd;
+	&quot;twentysevenNotes&quot;: &quot;&quot;,&#xd;
+	&quot;twentysixCorr&quot;: &quot;&quot;,&#xd;
+	&quot;twentysixHP&quot;: &quot;5&quot;,&#xd;
+	&quot;twentysixHalfP&quot;: &quot;&quot;,&#xd;
+	&quot;twentysixNotes&quot;: &quot;&quot;,&#xd;
+	&quot;twentythreeCorr&quot;: &quot;&quot;,&#xd;
+	&quot;twentythreeHP&quot;: &quot;5&quot;,&#xd;
+	&quot;twentythreeHalfP&quot;: &quot;&quot;,&#xd;
+	&quot;twentythreeNotes&quot;: &quot;&quot;,&#xd;
+	&quot;twentytwoCorr&quot;: &quot;&quot;,&#xd;
+	&quot;twentytwoHP&quot;: &quot;5&quot;,&#xd;
+	&quot;twentytwoHalfP&quot;: &quot;&quot;,&#xd;
+	&quot;twentytwoNotes&quot;: &quot;&quot;,&#xd;
+	&quot;twoCorr&quot;: &quot;&quot;,&#xd;
+	&quot;twoHP&quot;: &quot;5&quot;,&#xd;
+	&quot;twoHalfP&quot;: &quot;&quot;,&#xd;
+	&quot;twoNotes&quot;: &quot;&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">http://51.105.145.2:9191/dressuur</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+          <collectionProp name="HeaderManager.headers">
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">Content-Type</stringProp>
+              <stringProp name="Header.value">application/json</stringProp>
+            </elementProp>
+          </collectionProp>
+        </HeaderManager>
+        <hashTree/>
+      </hashTree>
+      <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>true</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename">Result.xml</stringProp>
+      </ResultCollector>
+      <hashTree/>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>

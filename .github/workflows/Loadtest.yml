@@ -13,9 +13,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Run JMeter Action
-        uses: QAInsights/PerfAction@v2.0
+        uses: ./
         with:
-          testFilePath: ./LoadTest.jmx
+          testFilePath: LoadTest.jmx
           args: "http://51.105.145.2:9191/dressuur"
 
       - uses: actions/upload-artifact@v1

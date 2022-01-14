@@ -15,8 +15,7 @@ jobs:
       - name: Run JMeter Action
         uses: ./
         with:
-          testFilePath: LoadTest.jmx
-          args: "http://51.144.188.249"
+          testFilePath: 'LoadTest.jmx'
 
       - uses: actions/upload-artifact@v1
         with:

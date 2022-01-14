@@ -1,4 +1,4 @@
-name: Test JMeter Action
+name: Load Test
 
 on:
   push:
@@ -13,7 +13,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Run JMeter Action
-        uses: QAInsights/PerfAction@v2.0
         with:
           testFilePath: ./LoadTest.jmx
           args: "http://51.105.145.2:9191/dressuur"

@@ -17,8 +17,6 @@ jobs:
         uses: ./
         with:
           testFilePath: LoadTest.jmx
-          outputReportsFolder: 'entryPoint'
-          args: "--loglevel INFO"
 
       - uses: actions/upload-artifact@v1
         with:

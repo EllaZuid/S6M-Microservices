@@ -16,7 +16,7 @@ jobs:
         uses: ./
         with:
           testFilePath: LoadTest.jmx
-          args: "http://51.105.145.2:9191/dressuur"
+          args: "http://51.144.188.249"
 
       - uses: actions/upload-artifact@v1
         with:

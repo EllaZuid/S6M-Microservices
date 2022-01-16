@@ -1,4 +1,4 @@
-name: Test JMeter Action
+name: Load Test
 
 on:
   push:
@@ -12,13 +12,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-
       - name: Run JMeter Action
         uses: ./
         with:
-          testFilePath: ./LoadTest.jmx
-          outputReportsFolder: reports/
-          args: "--loglevel INFO"
+          testFilePath: 'LoadTest.jmx'
 
       - uses: actions/upload-artifact@v1
         with:
